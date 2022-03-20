@@ -11,6 +11,10 @@ This repository (together with DME-Core) are the base dependencies for all DME S
 
 > **Please note:** The reason for choosing short names is to ensure they are suitable for all RISC OS disk partitions/FileSystems.
 
+## Status
+
+This repository is still under initial development, so it's not ready yet for use.
+
 ## !DeskCfg
 
 This is the container for the configuration of all the components in the DME Suite.
@@ -48,4 +52,3 @@ To use GCC (or ROOL DDE) edit the `Config` file and ensure you comment out the l
 Before you start your build, ensure that RISC OS Filer has seen the Compilers suite you would like to use to build this repo (otherwise the build process will fail return errors like "File not found" etc).
 
 To start the build, double click on the `Mk` file from a RISC OS Filer window.
- 
