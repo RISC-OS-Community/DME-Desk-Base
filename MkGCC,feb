@@ -1,0 +1,3 @@
+| Build using GCC tools:
+
+make all -D MAKER=make action=all MKFILE=MakefileGCC THROWBACK=-throwback -f MakefileGCC

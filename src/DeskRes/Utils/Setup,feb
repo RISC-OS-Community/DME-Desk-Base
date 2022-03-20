@@ -1,0 +1,16 @@
+| Setup DeskCfg
+
+| Check base directories structure:
+IfThere DeskRes:Components Then Else CDir DeskRes:Components
+IfThere DeskRes:Gadgets Then Else CDir DeskRes:Gadgets
+IfThere DeskRes:Gadgets.Desktop Then Else CDir DeskRes:Gadgets.Desktop
+IfThere DeskRes:Gadgets.Iconbar Then Else CDir DeskRes:Gadgets.Iconbar
+IfThere DeskRes:PlugIns Then Else CDir DeskRes:PlugIns
+
+| Check DeskCfg requirements:
+IfThere DeskCfg:Components.DeskRes Then Else CDir DeskCfg:Components.DeskRes
+
+| Build Default Configuration
+IfThere DeskCfg:Components.DeskRes.Config Then Set Build$Config 0 Else Set Build$Config 1
+If "<Build$Config>" = "1" Then /<DeskRes$Dir>.Utils.CDefConfig
+Unset Build$Config

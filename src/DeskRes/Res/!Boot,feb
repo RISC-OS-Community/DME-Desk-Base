@@ -1,0 +1,26 @@
+| RISC OS Desktop Resources (part of the DME Project)
+| (c) by Paolo Fabio Zaino all rights reserved
+| distributed under Apache 2.0 license
+|
+| Note: This directory should be stored in !Boot.Resources
+
+IconSprites <Obey$Dir>.!Sprites
+
+| Set the correct path to find !DeskCfg
+UnSet DeskCfg$Choices
+Set DeskCfg$Choices <Choices$Dir>
+If "<DeskCfg$Choices>" = "" AND "<Boot$OSVersion>" = "430" Then Set DeskCfg$Choices Boot:Choices.User.Single
+If "<DeskCfg$Choices>" = "" AND "<Boot$OSVersion>" = "600" Then Set DeskCfg$Choices Boot:Choices.User.Single
+If "<DeskCfg$Choices>" = "" Then Set DeskCfg$Choices Boot:Choices
+If "<DeskCfg$Dir>" = "" Then Repeat Filer_Boot <DeskCfg$Choices> -Applications -Tasks
+Unset DeskCfg$Choices
+
+| Check if DeskCfg has been seen by the Filer:
+If "<DeskCfg$Dir>" = "" Then Error This Application requires that the Filer has Seen first !DeskCfg and it appears that !DeskCfg has not been seen by the filer!
+
+| Set the current ObeyDir as DeskRes path
+Set DeskRes$Dir <Obey$Dir>
+Set DeskRes$Path <DeskRes$Dir>.DME.
+
+| Run Config
+/DeskCfg:Components.DeskRes.Config
