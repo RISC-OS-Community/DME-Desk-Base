@@ -1,0 +1,42 @@
+| Generic Build Cleaner for DDE on RISC OS
+| by Paolo Fabio Zaino
+
+echo ++++++++++++++++++++++++
+echo ++ Cleaning           ++
+echo ++++++++++++++++++++++++
+
+Set Build$Root <Obey$Dir>
+WimpSlot -min 2048k
+
+Set Build$Source 0
+IfThere <Build$Root>.src Then IfThere <Build$Root>.src.Makefile Then Set Build$Source 1
+
+If "<Build$Source>" = "1" Then Dir <Build$Root>.src
+If "<Build$Source>" = "1" Then amu clean -D action=clean -f MakeFileDDE
+If "<Build$Source>" = "1" Then stripdepnd MakeFileDDE
+If "<Build$Source>" = "0" Then echo Skipped, no Sources Makefile found.
+
+Unset Build$Source
+
+echo
+echo ---------------------
+echo
+
+echo ---------------------
+echo Cleaning Tests:
+echo ---------------------
+
+Set Build$Tests 0
+IfThere <Build$Root>.tests Then IFThere <Build$Root>.tests.Makefile Then Set Build$Tests
+If "<Build$Tests>" = "1" Then Dir <Build$Root>.tests
+If "<Build$Tests>" = "1" Then amu clean THROWBACK=-throwback -D action=clean -f MakeFileDDE
+If "<Build$Tests>" = "1" Then stripdepnd MakeFileDDE
+
+If "<Build$Tests>" = "0" Then echo Skipped, no Makefile for tests found.
+Unset Build$Tests
+
+echo
+echo ---------------------
+echo
+
+Dir <Build$Root>

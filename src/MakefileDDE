@@ -1,0 +1,18 @@
+# Master Makefile
+# This Makefile is designed to build/clean
+# all the components in the repository
+# Copyright (c) by Paolo Fabio Zaino
+# All rights reserved, distributed under Apache 2.0 license
+
+#MAKER:=amu
+
+COMPS:=DeskCfg DeskRes
+
+$(COMPS):
+	dir @.$@
+	$(MAKER) $(action) -f $(MKFILE)
+	dir ^
+
+all: $(COMPS)
+
+clean: $(COMPS)

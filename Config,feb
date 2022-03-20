@@ -1,0 +1,11 @@
+| Build Setup
+
+| To Use DDE uncomment the following lines:
+
+Set Maker$BuildCmd MkDDE
+Set Maker$CleanCmd MkCLeanDDE
+
+| To use GCC uncomment the following lines:
+
+| Set Maker$BuildCmd MkGCC
+| Set Maker$CleanCmd MkCleanGCC

@@ -1,0 +1,41 @@
+| Generic builder script to build stuff on RISC OS
+| by Paolo Fabio Zaino
+
+echo ++++++++++++++++++++++++
+echo ++ Building           ++
+echo ++++++++++++++++++++++++
+
+/<Obey$Dir>.Config
+
+Set Build$Root <Obey$Dir>
+WimpSlot -min 2048K
+
+Set Build$Source 0
+IfThere <Build$Root>.src Then IfThere <Build$Root>.src.<Maker$Ext> Then Set Build$Source 1
+
+If "<Build$Source>" = "1" Then Dir <Build$Root>.src
+If "<Build$Source>" = "1" Then /@.^.<Maker$BuildCmd>
+If "<Build$Source>" = "0" Then echo Skipped, no Sources Makefile found.
+
+Unset Build$Source
+
+echo
+echo ---------------------
+echo
+
+echo ---------------------
+echo Building Tests:
+echo ---------------------
+
+Set Build$Tests 0
+IfThere <Build$Root>.tests Then IFThere <Build$Root>.tests.<Maker$Ext> Then Set Build$Tests
+If "<Build$Tests>" = "1" Then Dir <Build$Root>.tests
+If "<Build$Tests>" = "1" Then /@.^.<Maker$CleanCmd>
+If "<Build$Tests>" = "0" Then echo Skipped, no Makefile for tests found.
+Unset Build$Tests
+
+echo
+echo ---------------------
+echo
+
+Dir <Build$Root>

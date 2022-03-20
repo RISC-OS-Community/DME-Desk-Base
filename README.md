@@ -38,3 +38,14 @@ When installed via PackMan, DeskRes will be installed in your RISC OS Boot Seque
 If you are installing it manually we recommend you to install it in your UniBoot in the `Resources` directory.
 
 Even when using a distributed configuration (aka sharing DeskCfg via ShareFS) DeskRes should **always** be installed in your local UniBoot `Resources` on your RISC OS system. This also improve boot performance btw.
+
+## How to build this repository
+
+You can either use GCC suite or ROOL DDE to build this repository.
+
+To use GCC (or ROOL DDE) edit the `Config` file and ensure you comment out the lines for the suite you do NOT wish to use to build the repo.
+
+Before you start your build, ensure that RISC OS Filer has seen the Compilers suite you would like to use to build this repo (otherwise the build process will fail return errors like "File not found" etc).
+
+To start the build, double click on the `Mk` file from a RISC OS Filer window.
+ 

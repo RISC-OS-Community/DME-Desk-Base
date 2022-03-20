@@ -1,0 +1,15 @@
+| RISC OS Desktop Configuration (part of the DME Project)
+| (c) by Paolo Fabio Zaino all rights reserved
+| distributed under Apache 2.0 license
+|
+| Note: This directory should have a copy stored for each
+| user account on the system.
+
+IconSprites <Obey$Dir>.!Sprites
+
+| User double-clicked on DeskCfg so force setup:
+Set DeskCfg$Dir <Obey$Dir>
+Set DeskCfg$Path <DeskCfg$Dir>.DME.
+
+| Open Config directory:
+Filer_OpenDir DeskCfg:
