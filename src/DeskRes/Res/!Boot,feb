@@ -21,3 +21,6 @@ If "<DeskCfg$Dir>" = "" Then Error This Application requires that the Filer has 
 | Set the current ObeyDir as DeskRes path
 Set DeskRes$Dir <Obey$Dir>
 Set DeskRes$Path <DeskRes$Dir>.DME.
+
+| Run Config
+/DeskCfg:Components.DeskRes.Config

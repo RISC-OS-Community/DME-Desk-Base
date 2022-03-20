@@ -14,13 +14,21 @@ If "<DeskCfg$Choices>" = "" AND "<Boot$OSVersion>" = "600" Then Set DeskCfg$Choi
 If "<DeskCfg$Choices>" = "" Then Set DeskCfg$Choices Boot:Choices
 If "<DeskCfg$Dir>" = "" Then Repeat Filer_Boot <DeskCfg$Choices> -Applications -Tasks
 Unset DeskCfg$Choices
-                                                                              
+
 | Check if DeskCfg has been seen by the Filer:
 If "<DeskCfg$Dir>" = "" Then Error This Application requires that the Filer has Seen first !DeskCfg and it appears that !DeskCfg has not been seen by the filer!
 
 | Set the current ObeyDir as DeskRes path
 Set DeskRes$Dir <Obey$Dir>
 Set DeskRes$Path <DeskRes$Dir>.DME.
+
+| Check if the directory structure is correct:
+Set Setup$DME 1
+IfThere DeskCfg:Components Then IfThere DeskCfg:Components.DeskRes Then IfThere DeskCfg:Components.DeskRes.Config Then Set Setup$DME 0
+If "<Setup$DME>" = "1" Then  /<DeskRes$Dir>.Utils.Setup
+
+| Run Config
+/DeskCfg:Components.DeskRes.Config
 
 | Open the components directory
 Filer_OpenDir <DeskRes$Dir>.DME
