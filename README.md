@@ -70,8 +70,8 @@ No, CDDL v1.1 is actually a very friendly license for both commercial and fully 
 This license was chosen to:
 
 - Ensure everyone in the RISC OS community could benefit from the software
-- Having a license that is compatible with RISC OS license itself
-- Avoid people from taking the sources and not collaborating back improvements (so the entire community would always benefit from every improvement)
+- Having a license that is compatible with RISC OS license
+- Avoid people from taking the sources and not collaborating back their improvements (we want to ensure that the entire RISC OS community can always benefit from every improvement!)
 - Have a commercial-software friendly license, so entities that want to produce commercial software can do so without legal issues, as long as they respect in full the CDDL license
 
 ### Why CDDL v1.1?
@@ -80,3 +80,27 @@ It includes some corrections that:
 
 - Makes the CDDL compatible with European Copyright law
 - Allow single developers to use the CDDL for their work
+
+### Can I distribute DME components?
+
+Yes, you can, but they rely on each-other, so we strongly recommend to download and use them via !Packman using the riscoscommunity.org official repository.
+
+This not only installs everything correctly on your system and image, but also allow the end user to easily keep their system up-to-date.
+
+If you have added/applied your own theming and customisations, do not worry, the update process does NOT change the customisations, nor removes them.
+
+>**Please Note:** We only support standard installations, in other words installations done via !Packman using our repository. This is for obvious reasons, like we have no control and no idea on how non standard installation processes have been conducted, if all the file were installed correctly and if all the components "see" each-other etc. So, to open a support request here please ensure you have a standard installation of the entire DME ecosystem.
+
+### How can I request for help in case of problems?
+
+If you have a standard installation of the DME ecosystem, then please open a support ticket here on GitHub in the **Issues** section (link on the top menu).
+
+### I have found and fixed some issues, how can I submit my changes back?
+
+Please have a look at the [CONTRIBUTING](CONTRIBUTING.MB) guidelines for more details.
+
+## Last note
+
+Thanks for using RISC OS and the DME engine and all the components. If you want to submit ideas please feel free to use the Forum or open an Issue with your idea/suggestion.
+
+Have fun! :)
