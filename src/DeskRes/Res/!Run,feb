@@ -6,6 +6,10 @@
 
 IconSprites <Obey$Dir>.!Sprites
 
+| Set the current ObeyDir as DeskRes path
+Set DeskRes$Dir <Obey$Dir>
+Set DeskRes$Path <DeskRes$Dir>.DME.
+
 | Set the correct path to find !DeskCfg
 UnSet DeskCfg$Choices
 Set DeskCfg$Choices <Choices$Dir>
@@ -17,10 +21,6 @@ Unset DeskCfg$Choices
 
 | Check if DeskCfg has been seen by the Filer:
 If "<DeskCfg$Dir>" = "" Then Error This Application requires that the Filer has Seen first !DeskCfg and it appears that !DeskCfg has not been seen by the filer!
-
-| Set the current ObeyDir as DeskRes path
-Set DeskRes$Dir <Obey$Dir>
-Set DeskRes$Path <DeskRes$Dir>.DME.
 
 | Check if the directory structure is correct:
 Set Setup$DME 1

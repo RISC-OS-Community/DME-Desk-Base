@@ -1,0 +1,7 @@
+| AutoStart DME Components:
+| (c) by Paolo Fabio Zaino all rights reserved
+| distributed under CDDL v1.1 license
+
+IFThere DeskCfg:Components.AutoStart Then Repeat Filer_Run DeskCfg:Components.AutoStart -Type Desktop -Tasks
+
+| DME AutoStart Sequence End

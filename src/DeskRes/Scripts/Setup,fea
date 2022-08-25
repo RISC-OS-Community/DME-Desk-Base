@@ -1,0 +1,11 @@
+| Setup DME Engine
+| (c) by Paolo Fabio Zaino all rights reserved
+| distributed under CDDL v1.1 license
+
+| Boot DME Components:
+IFThere DeskRes:Components Then Repeat Filer_Boot DeskRes:Components -Applications -Tasks
+IFThere DeskRes:Gadgets Then Repeat Filer_Boot DeskRes:Gadgets -Applications -Tasks
+IFThere DeskRes:Gadgets.Global Then Repeat Filer_Boot DeskRes:Gadgets.Global -Applications -Tasks
+IFThere DeskRes:Gadgets.IconBar Then Repeat Filer_Boot DeskRes:Gadgets.IconBar -Applications -Tasks
+IFThere DeskRes:Plugins Then Repeat Filer_Boot DeskRes:Plugins -Applications -Tasks
+| End
