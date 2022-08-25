@@ -1,6 +1,6 @@
 | RISC OS Desktop Configuration (part of the DME Project)
 | (c) by Paolo Fabio Zaino all rights reserved
-| distributed under Apache 2.0 license
+| distributed under CDDl v1.1 license
 |
 | Note: This directory should have a copy stored for each
 | user account on the system.
@@ -16,3 +16,4 @@ If "<Setup$DME>" = "1" Then Set DeskCfg$Path <DeskCfg$Dir>.DME.
 If "<Setup$DME>" = "1" Then  /<DeskCfg$Dir>.Utils.Setup
 
 Unset Setup$DME
+

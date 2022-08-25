@@ -2,7 +2,7 @@
 # This Makefile is designed to build/clean
 # all the components in the repository
 # Copyright (c) by Paolo Fabio Zaino
-# All rights reserved, distributed under Apache 2.0 license
+# All rights reserved, distributed under CDDL v1.1 license
 
 #MAKER:=amu
 
